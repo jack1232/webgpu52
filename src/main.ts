@@ -32,6 +32,7 @@ export const CreateObjects = async () => {
     const indexBuffer2 = CreateGPUBufferUint(device, cubeData.indexData);
  
     const pipeline1 = device.createRenderPipeline({
+        layout:'auto',
         vertex: {
             module: device.createShaderModule({                    
                 code: sphereShader
@@ -86,6 +87,7 @@ export const CreateObjects = async () => {
     });
 
     const pipeline2 = device.createRenderPipeline({
+        layout:'auto',
         vertex: {
             module: device.createShaderModule({                    
                 code: cubeShader

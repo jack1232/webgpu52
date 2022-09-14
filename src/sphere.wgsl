@@ -18,7 +18,7 @@ struct Output {
     @location(2) vUV : vec2<f32>,
 };
 
-@stage(vertex)
+@vertex
 fn vs_main(input: Input) -> Output {        
     var output: Output;        
     let mPosition:vec4<f32> = uniforms.modelMatrix * input.position; 
@@ -58,7 +58,7 @@ struct FragInput {
     @location(2) vUV : vec2<f32>,
 };
 
-@stage(fragment)
+@fragment
 fn fs_main(input: FragInput) -> @location(0) vec4<f32> {
     let textureColor:vec3<f32> = (textureSample(textureData, textureSampler, input.vUV)).rgb;
     let N:vec3<f32> = normalize(input.vNormal.xyz);                
